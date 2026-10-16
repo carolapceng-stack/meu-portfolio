@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <title>Portfólio</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="header__nav main-nav">
+        <ul class="main-nav__list main-list">
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#home">INÍCIO</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#about">SOBRE</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#skills">MINHAS HABILIDADES</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <!-- Seção inicial -->
+      <section class="main__home home" id="home">
+        <h1 class="home__title">NOME SOBRENOME</h1>
+        <p class="home__subtitle">
+          DESENVOLVEDOR WEB, PROGRAMADOR PYTHON
+        </p>
+      </section>
+
+      <!-- Seção sobre mim -->
+      <section class="main__about about" id="about">
+        <h2 class="about__title">SOBRE MIM</h2>
+
+        <div class="about__info info-block">
+          <p class="info-block__text">
+            Sou estudante de programação e estou aprendendo a desenvolver
+            sites e projetos. Gosto de tecnologia, de aprender coisas novas
+            e de colocar meus conhecimentos em prática.
+          </p>
+
+          <img
+            class="info-block__img"
+            src="../static/img/clark%20kent.jpg"
+            alt="Foto de perfil"
+            width="350"
+            height="350"
+          />
+        </div>
+      </section>
+
+      <!-- Seção de habilidades -->
+      <section class="main__skills skills" id="skills">
+        <h2 class="skills__title">MINHAS HABILIDADES</h2>
+
+        <form action="/" method="POST">
+          <ul class="skills__list skills-list">
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/python.png"
+                alt="Python"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Programação com Python.</span>
+              <input
+                class="skill__button"
+                type="submit"
+                name="button_python"
+                value="VER PROJETO"
+              />
+            </li>
+
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/discord.png"
+                alt="Discord"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Comunicação pelo Discord.</span>
+              <input
+                class="skill__button"
+                type="submit"
+                name="button_discord"
+                value="VER PROJETO"
+              />
+            </li>
+
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/html.png"
+                alt="HTML"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Criação de páginas com HTML.</span>
+              <input
+                class="skill__button"
+                type="submit"
+                name="button_html"
+                value="VER PROJETO"
+              />
+            </li>
+
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/db.webp"
+                alt="SQL"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Banco de dados e SQL.</span>
+              <input
+                class="skill__button"
+                type="submit"
+                name="button_db"
+                value="VER PROJETO"
+              />
+            </li>
+          </ul>
+        </form>
+
+        <!-- Projeto Python -->
+        {% if button_python %}
+        <div class="skills__project project" id="project">
+          <img
+            class="project__img"
+            src="../static/img/python-project.png"
+            alt="Projeto Python"
+            width="500"
+          />
+          <a class="project__link" href="">Abrir no GitHub</a>
+        </div>
+        {% endif %}
+
+        <!-- Projeto Discord -->
+        {% if button_discord %}
+        <div class="skills__project project">
+          <img
+            class="project__img"
+            src="../static/img/discord.png"
+            alt="Projeto Discord"
+            width="150"
+          />
+          <a class="project__link" href="">Abrir no GitHub</a>
+        </div>
+        {% endif %}
+
+        <!-- Projeto HTML -->
+        {% if button_html %}
+        <div class="skills__project project">
+          <img
+            class="project__img"
+            src="../static/img/html.png"
+            alt="Projeto HTML"
+            width="150"
+          />
+          <a class="project__link" href="">Abrir no GitHub</a>
+        </div>
+        {% endif %}
+
+        <!-- Projeto SQL -->
+        {% if button_db %}
+        <div class="skills__project project">
+          <img
+            class="project__img"
+            src="../static/img/db.webp"
+            alt="Projeto SQL"
+            width="150"
+          />
+          <a class="project__link" href="">Abrir no GitHub</a>
+        </div>
+        {% endif %}
+      </section>
+
+      <!-- Formulário de feedback -->
+      <section class="main__feedback feedback" id="feedback">
+        <h2 class="feedback__title">FEEDBACK</h2>
+
+        <form action="/" method="POST" class="feedback__form form">
+          <label for="email">
+            <input
+              type="email"
+              class="form__input"
+              name="email"
+              id="email"
+              placeholder="Digite seu e-mail"
+              required
+            />
+          </label>
+
+          <label for="text">
+            <textarea
+              name="text"
+              class="form__input"
+              id="text"
+              cols="70"
+              rows="10"
+              required
+              placeholder="Comentário"
+            ></textarea>
+          </label>
+
+          <button class="form__button" type="submit">ENVIAR</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer></footer>
+  </body>
+</html>
+
